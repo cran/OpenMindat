@@ -1,0 +1,68 @@
+---
+title: "Mindat Data"
+author: "Xiang Que"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Mindat Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Load libraries 
+```{r}
+#library(httr)
+#library(jsonlite)
+#library(OpenMindat)
+#library(tidyverse)
+#library(sf)
+#library(mapview)
+```
+
+## Connect to the Mindat API 
+```{r}
+#mindat_connection("3214e7170011236535c9a6e17d4ebd69", page_size = 1500)
+```
+
+## Demo 1- Map the retieved Localities that contains As
+```{r}
+#mapview(localities_list_elems_inc(c("As")), xcol = "longitude", ycol = "latitude", crs = 4269, grid = FALSE)#"Dy","Li"
+```
+
+
+## Demo 2- Map the retieved Localities within an given country
+```{r}
+#mapview(localities_list_country(c("Sweden")), xcol = "longitude", ycol = "latitude", crs = 4269, grid = FALSE)
+```
+
+## Demo 3- Map the retieved Localities that contains the input description. 
+```{r}
+#mapview(localities_list_description("volcano"), xcol = "longitude", ycol = "latitude", crs = 4269, grid = FALSE)
+```
+
+## Demo 4- Map the retieved Localities that contains the input description. 
+```{r}
+#df_elements<-minerals_ima_list_ima(1)$type_localities
+#df_out <- data.frame()
+#for (elements in df_elements) {
+#  elm_id_list <- as.list(elements)
+#  for (elm in elm_id_list){
+#    df_cur_locality <- localities_retrieve_id(elm)
+#    df_out <- rbind(df_out,df_cur_locality)
+#  }
+#}
+#df_out$longitude <- as.numeric(df_out$longitude)
+#df_out$latitude <- as.numeric(df_out$latitude)
+#mapview(df_out2, xcol = "longitude", ycol = "latitude", crs = 4269, grid = FALSE)
+```
+
+## More Examples
+
+Please refer to: https://github.com/quexiang/OpenMindat
